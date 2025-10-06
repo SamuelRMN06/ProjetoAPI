@@ -1,18 +1,17 @@
 package com.example.ProjetoIntegracao.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
-
-import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class LojaModel {
+public class ProdutoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,15 +19,15 @@ public class LojaModel {
 
     @NotBlank(message = "Nome é obrigatório")
     private String nome;
-    private String endereco;
-    private String telefone;
-    private String email;
     private String descricao;
-    private String cnpj;
+    private Double preco;
+    private String marca;
+    private Double peso;
+    private Integer quantidade;
 
 
-    @OneToMany(mappedBy = "loja", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
-    private List<ProdutoModel> produtos;
-
+    @ManyToOne
+    @JoinColumn(name = "loja_id")
+    @JsonBackReference
+    private LojaModel loja;
 }
