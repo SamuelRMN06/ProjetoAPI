@@ -3,7 +3,7 @@
 ## 📘 Visão Geral
 Esta API foi desenvolvida em **Spring Boot** e tem como objetivo gerenciar **lojas** e **produtos**.  
 Ela permite criar, listar, atualizar e excluir lojas, além de cadastrar produtos vinculados a cada loja.
-
+Link deploy: https://projetointegracao.onrender.com
 ---
 
 ## ⚙️ Tecnologias Utilizadas
