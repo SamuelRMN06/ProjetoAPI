@@ -14,7 +14,7 @@ Ela permite criar, listar, atualizar e excluir lojas, além de cadastrar produto
 - **Hibernate**
 - **Jakarta Validation**
 - **Lombok**
-- **Banco de dados relacional (MySQL, PostgreSQL, etc.)**
+- **Banco de dados relacional (PostgreSQL)**
 
 ---
 
