@@ -1,0 +1,21 @@
+# Arquivos gerados pelo Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+
+# Arquivos de log
+*.log
+npm-debug.log
+
+# Arquivos de IDEs
+.idea
+.vscode
+*.iml
+*.ipr
+*.iws
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
