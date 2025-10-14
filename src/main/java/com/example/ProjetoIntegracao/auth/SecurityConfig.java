@@ -20,14 +20,16 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                // 1. Desabilita o CSRF, pois não estamos usando sessões/cookies
+
                 .csrf(AbstractHttpConfigurer::disable)
 
-                // 2. Configura as regras de autorização
+
                 .authorizeHttpRequests(auth -> auth
-                        // Você pode ter um endpoint público para gerar o token inicial
+                        .requestMatchers("/v3/api-docs/**").permitAll()
+                        .requestMatchers("/swagger-ui.html").permitAll()
+                        .requestMatchers("/swagger-ui/**").permitAll()
                         .requestMatchers("/gerar-token").permitAll()
-                        // Todas as outras requisições exigem autenticação
+
                         .anyRequest().authenticated()
                 )
 
